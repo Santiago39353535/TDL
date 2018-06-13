@@ -1,22 +1,18 @@
-function factorial(n)
-	if n<=1 then return 1
-	else
-		return n*factorial(n-1)
-	end
+
+function newCounter ()
+	local count = 0
+	return function () -- anonymous function
+			count = count + 1
+			return count
+		end
 end
+c1 = newCounter()
 
---print(factorial(3))
+print(c1()) --> 1
+print(c1()) --> 2
 
-
-
-a = {"uno","dos","tres"}
-print(#a)    --> 4
-
-a[5]="asd"
-
-print(#a)
-
-for i=1,#a do
-	print(a[i])
-end
+c2 = newCounter()
+print(c2()) --> 1
+print(c1()) --> 3
+print(c2()) --> 2
 
