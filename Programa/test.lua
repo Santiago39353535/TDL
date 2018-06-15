@@ -1,4 +1,3 @@
-
 function newCounter ()
 	local count = 0
 	return function () -- anonymous function
