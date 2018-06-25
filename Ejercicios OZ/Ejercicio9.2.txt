@@ -1,0 +1,4 @@
+La diferencia es que Reverse1 invierte toda la lista al momento que se quiere acceder a un dato de ella,
+mientras que Reverse2 modifica la lista a medida que se necesita el dato.
+
+Ambos dan el mismo resultado. 
