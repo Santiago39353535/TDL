@@ -69,9 +69,3 @@ L = [1 2 3 4 5 6]
 L2 = [ 7 8 9]
 {Browse {Position L 4}}
 end
-
-
-% 2
-% 2.1 Externo Q U
-% 2.2 Externo Q
-% 2.3 No hay

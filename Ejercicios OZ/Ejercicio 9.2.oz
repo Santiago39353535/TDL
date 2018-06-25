@@ -29,3 +29,8 @@ local Reverse1 Reverse2 L1 L2 L3 in
    {Browse L3.2.2.2.1}
    {Browse L3}
 end
+
+/*La diferencia es que Reverse1 invierte toda la lista al momento que se quiere acceder a un dato de ella,
+mientras que Reverse2 modifica la lista a medida que se necesita el dato.
+
+Ambos dan el mismo resultado.*/ 
