@@ -1,0 +1,20 @@
+Currying
+Es una tecnica que permite simplificar programas que usan mucho high-order programming.
+La idea es escribir funciones de n argumentos como n funciones anidadas de un solo argumento.
+Ejemplo basico:
+
+fun {Max X Y}
+	if X>=Y then X else Y end
+end
+
+(recibe dos parametros X e Y)
+se reescribe:
+
+fun {Max X}
+   fun {$ Y}
+      if X>=Y then X else Y end
+   end
+end
+
+Esto mantiene el mismo cuerpo de funciones. Y se llama: {{Max 10} 20}.
+La ventaja de utilizar currying es que las funciones intermedias puede ser utiles en si mismo.
