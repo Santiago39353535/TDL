@@ -1,5 +1,4 @@
-local X V V2 V3 V4 Dicc in
-
+local Dicc D L in
    class Dicc
       attr clave valor hijoD hijoI
  
@@ -23,21 +22,48 @@ local X V V2 V3 V4 Dicc in
 	 end
       end
 
-      meth get(Clave Valor)
-	 if @clave==nil then
-	    Valor=nil
-	 elseif @clave==Clave then
-	    Valor=@valor
+      meth get(Clave $)
+	 if @clave==Clave then
+	    @valor
 	 elseif @clave > Clave then
-	    {@hijoD get(Clave Valor)}
+	    {@hijoD get(Clave)}
 	 else
-	    {@hijoI get(Clave Valor)} 
+	    {@hijoI get(Clave)} 
 	 end   
       end
 
-      meth domain(L)
-	 
-      end
-   end
+     /* meth domain(L)
+	 local Recorrer in	    
+	    Recorrer = proc{$ Clave R}
+			  if ~(@clave == nil) then
+			     _ = {Append L @clave}
+			     {Recorrer @hijoI L}
+			     {Recorrer @hijoD L}
+			  else
+			     R=L
+			  end
+		       end
+	 end
+      end*/
 
+      meth inor(L $)
+	 if ~(@clave == nil) then
+	    L= L|@clave
+	    {@hijoI inor(L)}
+	    {@hijoD inor(L)}
+	 else
+	    L
+	 end
+      end
+      
+      
+      
+   end
+   L=[0]
+   D = {New Dicc newDicc}
+   {D put('h')}
+   %{D put('o')}
+   %{D put('o')}
+   {Browse {D get('h' $)}}
+   {Browse {D inor(L $)}}
 end
