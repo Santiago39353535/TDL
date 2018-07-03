@@ -13,16 +13,16 @@ function Arbol:put(clave, valor)
 		self.valor = valor
 	end
 	if self.clave < clave then
-		if hijoD == nil then
-			hijoD = Arbol:new()
+		if self.hijoD == nil then
+			self.hijoD = Arbol:new()
 		end
-		hijoD:put(clave,valor)
+		self.hijoD:put(clave,valor)
 	end
 	if self.clave > clave then
-		if hijoI == nil then
-			hijoI = Arbol:new()
+		if self.hijoI == nil then
+			self.hijoI = Arbol:new()
 		end
-		hijoI:put(clave,valor)
+		self.hijoI:put(clave,valor)
 	end
 end
 
@@ -30,12 +30,12 @@ function Arbol:get( clave )
 	if self.clave == clave then
 		return self.valor
 	elseif self.clave < clave then
-		if hijoD ~= nil then
-			return hijoD:get(clave)
+		if self.hijoD ~= nil then
+			return self.hijoD:get(clave)
 		else return nil end
 	elseif self.clave > clave then
-		if hijoI ~= nil then
-		return hijoI:get(clave)
+		if self.hijoI ~= nil then
+		return self.hijoI:get(clave)
 		else return nil end
 	end
 end
